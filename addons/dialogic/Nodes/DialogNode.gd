@@ -27,7 +27,7 @@ var _state : int = state.IDLE
 
 var do_fade_in := true
 var dialog_faded_in_already = false
-# true if the glossary popup is visible: # TODO rename
+
 var definition_visible: bool = false
 # used to reset the mouse mode after questions:
 var last_mouse_mode = null
@@ -217,7 +217,6 @@ func resize_main():
 	
 	# Update box position
 	var anchor = current_theme.get_value('box', 'anchor', 9)
-	# TODO: remove backups in 2.0
 	var margin_bottom = current_theme.get_value('box', 'box_margin_bottom', current_theme.get_value('box', 'box_margin_v', 40) * -1)
 	var margin_top = current_theme.get_value('box', 'box_margin_top', current_theme.get_value('box', 'box_margin_v', 40))
 	var margin_left = current_theme.get_value('box', 'box_margin_left', current_theme.get_value('box', 'box_margin_h', 40))
@@ -560,7 +559,6 @@ func on_timeline_start():
 		if settings.get_value('saving', 'autosave', true):
 			# save to the default slot
 			Dialogic.save('', true)
-	# TODO remove event_start in 2.0
 	emit_signal("event_start", "timeline", timeline_name)
 	emit_signal("timeline_start", timeline_name)
 
@@ -570,7 +568,6 @@ func on_timeline_end():
 		if settings.get_value('saving', 'autosave', true):
 			# save to the default slot
 			Dialogic.save('', true)
-	# TODO remove event_end in 2.0
 	emit_signal("event_end", "timeline")
 	emit_signal("timeline_end", timeline_name)
 

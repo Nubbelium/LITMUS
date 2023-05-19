@@ -379,7 +379,6 @@ func load_theme(filename):
 	n['size_w'].value = size_value.x
 	n['size_h'].value = size_value.y
 	n['dialog_box_anchor'].select(theme.get_value('box', 'anchor', 9))
-	# TODO: remove backups in 2.0
 
 	n['ninepatch_margin_left'].value = theme.get_value('ninepatch', 'ninepatch_margin_left', theme.get_value('ninepatch', 'ninepatch_margin_left', 0))
 	n['ninepatch_margin_right'].value = theme.get_value('ninepatch', 'ninepatch_margin_right', theme.get_value('ninepatch', 'ninepatch_margin_right', 0))

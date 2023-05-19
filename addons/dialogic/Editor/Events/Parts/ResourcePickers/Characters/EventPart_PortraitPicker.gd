@@ -80,7 +80,6 @@ func _on_PickerMenu_selected(index):
 	else:
 		event_data['portrait'] = picker_menu.get_popup().get_item_text(index)
 		picker_menu.custom_icon = portrait_icon
-	# TODO in 2.0
 	if event_data['portrait'] == "[Definition]":
 		picker_menu.text = "[Value]"
 	else:

@@ -297,10 +297,6 @@ func build_documentation(selected_item: String=''):
 ## *****************************************************************************
 
 func _on_item_selected():
-	# TODO: Ideally I would perform a "save" here before opening the next
-	#       resource. Unfortunately there has been so many bugs doing that 
-	#       that I'll revisit it in the future. 
-	#       save_current_resource()
 	var metadata = get_selected().get_metadata(0)
 	match metadata['editor']:
 		'Timeline':

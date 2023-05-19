@@ -84,7 +84,6 @@ func _ready():
 	# Themes
 	nodes['themes'].connect('about_to_show', self, 'build_PickerMenu')
 	nodes['themes'].custom_icon = load("res://addons/dialogic/Images/Resources/theme.svg")
-	# TODO move to theme section later
 	nodes['canvas_layer'].connect('value_changed', self, '_on_canvas_layer_text_changed')
 
 	# Input
@@ -184,7 +183,6 @@ func load_values(settings: ConfigFile, section: String, key: Array):
 
 
 func refresh_themes(settings: ConfigFile):
-	# TODO move to theme section later
 	nodes['themes'].clear()
 	var theme_list = DialogicUtil.get_sorted_theme_list()
 	var theme_indexes = {}

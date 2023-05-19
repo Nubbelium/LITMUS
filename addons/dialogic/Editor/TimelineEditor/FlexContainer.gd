@@ -5,12 +5,6 @@ extends Container
 # using their minimum size, and will then continue on the next row.
 # Does not use SIZE_EXPAND flags of children.
 
-# TODO: half-respect vertical SIZE_EXPAND flags by expanding the child to match
-#       the tallest child in that row?
-# TODO: Respect scaled children?
-# TODO: Can we find a way to intuitively use a child's horizontal SIZE_EXPAND
-#       flag?
-
 export var horizontal_margin: float = 5
 export var vertical_margin: float = 5
 

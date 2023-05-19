@@ -272,8 +272,6 @@ static func set_variable(name: String, value):
 				d['value'] = str(value)
 				exists = true
 	if exists == false:
-		# TODO it would be great to automatically generate that missing variable here so they don't
-		# have to create it from the editor. 
 		print("[Dialogic] Warning! the variable [" + name + "] doesn't exists. Create it from the Dialogic editor.")
 	return value
 

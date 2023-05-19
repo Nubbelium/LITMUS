@@ -56,7 +56,6 @@ func load_data(data:Dictionary):
 		file_picker.show()
 		region_group.show()
 	
-	# TODO 2.0 delete this mess
 	if event_data.has('audio'): event_data['audio'] = 'play'
 	if event_data.has('background-music'): event_data['background-music'] = 'play'
 
