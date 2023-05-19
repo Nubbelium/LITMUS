@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://npcs/NPC.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+npc_name = "figure"
+initial_dialog = "Welcome to the world of Porteus! I am the Game Master, you are free to explore the world as you wish. If you would like to leave, there is a key right behind you that unlocks this doorway. Please enjoy your stay. *He bows politely*"
+post_quest_dialog = ""

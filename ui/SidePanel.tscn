@@ -1,0 +1,187 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://main_panel.tres" type="StyleBox" id=1]
+[ext_resource path="res://fonts/plex_mono_24.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/plex_mono_16.tres" type="DynamicFont" id=3]
+[ext_resource path="res://ui/SidePanel.gd" type="Script" id=4]
+
+[sub_resource type="ImageTexture" id=2]
+
+[sub_resource type="StyleBoxTexture" id=3]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id=6]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id=9]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id=12]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id=13]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="Theme" id=14]
+VScrollBar/icons/decrement = SubResource( 2 )
+VScrollBar/icons/decrement_highlight = SubResource( 2 )
+VScrollBar/icons/decrement_pressed = SubResource( 2 )
+VScrollBar/icons/increment = SubResource( 2 )
+VScrollBar/icons/increment_highlight = SubResource( 2 )
+VScrollBar/icons/increment_pressed = SubResource( 2 )
+VScrollBar/styles/grabber = SubResource( 3 )
+VScrollBar/styles/grabber_highlight = SubResource( 6 )
+VScrollBar/styles/grabber_pressed = SubResource( 9 )
+VScrollBar/styles/scroll = SubResource( 12 )
+VScrollBar/styles/scroll_focus = SubResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 0.0745098 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.8, 0.8, 0.8, 0.0901961 )
+
+[node name="SidePanel" type="PanelContainer"]
+rect_min_size = Vector2( 320, 0 )
+rect_clip_content = true
+custom_styles/panel = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 328.0
+margin_bottom = 242.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 323.0
+margin_bottom = 237.0
+custom_constants/separation = 10
+
+[node name="TitleSection" type="VBoxContainer" parent="MarginContainer/Rows"]
+margin_right = 318.0
+margin_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 0
+custom_constants/separation = 0
+
+[node name="InfoLabel" type="Label" parent="MarginContainer/Rows/TitleSection"]
+margin_top = -1.0
+margin_right = 318.0
+margin_bottom = 13.3333
+custom_colors/font_color = Color( 0.631373, 0.631373, 0.631373, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "You are in..."
+
+[node name="RoomNameLabel" type="Label" parent="MarginContainer/Rows/TitleSection"]
+margin_top = 14.0
+margin_right = 318.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 0.980392, 1, 0.580392, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "A Room"
+autowrap = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Rows"]
+margin_top = 48.0
+margin_right = 318.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 80 )
+theme = SubResource( 14 )
+custom_styles/bg = SubResource( 1 )
+scroll_horizontal_enabled = false
+
+[node name="RoomDescriptionLabel" type="Label" parent="MarginContainer/Rows/ScrollContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 314.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 310, 80 )
+custom_fonts/font = ExtResource( 3 )
+text = "This will be where the room's description goes."
+autowrap = true
+
+[node name="ListArea" type="VBoxContainer" parent="MarginContainer/Rows"]
+margin_top = 138.0
+margin_right = 318.0
+margin_bottom = 191.0
+size_flags_vertical = 3
+
+[node name="ExitLabel" type="RichTextLabel" parent="MarginContainer/Rows/ListArea"]
+margin_right = 318.0
+margin_bottom = 15.0
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Exits: Option"
+text = "Exits: Option"
+fit_content_height = true
+
+[node name="NpcLabel" type="RichTextLabel" parent="MarginContainer/Rows/ListArea"]
+margin_top = 19.0
+margin_right = 318.0
+margin_bottom = 34.0
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Exits: Option"
+text = "Exits: Option"
+fit_content_height = true
+
+[node name="ItemLabel" type="RichTextLabel" parent="MarginContainer/Rows/ListArea"]
+margin_top = 38.0
+margin_right = 318.0
+margin_bottom = 53.0
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Exits: Option"
+text = "Exits: Option"
+fit_content_height = true
+
+[node name="HelpLabel" type="Label" parent="MarginContainer/Rows"]
+margin_top = 200.0
+margin_right = 318.0
+margin_bottom = 231.667
+custom_colors/font_color = Color( 1, 0.827451, 0.580392, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "You can type 'help' to see all possible commands."
+autowrap = true

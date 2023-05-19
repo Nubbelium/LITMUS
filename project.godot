@@ -1,0 +1,269 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "EditorPlugin",
+"class": "BeautifierAPI",
+"language": "GDScript",
+"path": "res://addons/godot_beautifier/src/apis.gd"
+}, {
+"base": "Reference",
+"class": "CellEditor",
+"language": "GDScript",
+"path": "res://addons/resources_speadsheet_view/typed_cells/cell_editor.gd"
+}, {
+"base": "CellEditor",
+"class": "CellEditorArray",
+"language": "GDScript",
+"path": "res://addons/resources_speadsheet_view/typed_cells/cell_editor_array.gd"
+}, {
+"base": "Reference",
+"class": "DTS",
+"language": "GDScript",
+"path": "res://addons/dialogic/Localization/translation_service.gd"
+}, {
+"base": "Node",
+"class": "Dialogic",
+"language": "GDScript",
+"path": "res://addons/dialogic/Other/DialogicClass.gd"
+}, {
+"base": "Reference",
+"class": "DialogicAnimaPropertiesHelper",
+"language": "GDScript",
+"path": "res://addons/dialogic/Nodes/Anima/DialogicAnimaPropertiesHelper.gd"
+}, {
+"base": "Node",
+"class": "DialogicAnimaResources",
+"language": "GDScript",
+"path": "res://addons/dialogic/Nodes/Anima/DialogicAnimaResources.gd"
+}, {
+"base": "Control",
+"class": "DialogicBackgroundMusic",
+"language": "GDScript",
+"path": "res://addons/dialogic/Nodes/BackgroundMusic.gd"
+}, {
+"base": "Node",
+"class": "DialogicCustomEvents",
+"language": "GDScript",
+"path": "res://addons/dialogic/Nodes/DialogicCustomEvents.gd"
+}, {
+"base": "Node",
+"class": "DialogicDefinitionsUtil",
+"language": "GDScript",
+"path": "res://addons/dialogic/Other/DialogicDefinitionsUtil.gd"
+}, {
+"base": "Node",
+"class": "DialogicParser",
+"language": "GDScript",
+"path": "res://addons/dialogic/Parser/DialogicParser.gd"
+}, {
+"base": "Reference",
+"class": "DialogicResources",
+"language": "GDScript",
+"path": "res://addons/dialogic/Other/DialogicResources.gd"
+}, {
+"base": "Reference",
+"class": "DialogicUtil",
+"language": "GDScript",
+"path": "res://addons/dialogic/Other/DialogicUtil.gd"
+}, {
+"base": "Resource",
+"class": "Exit",
+"language": "GDScript",
+"path": "res://rooms/Exit.gd"
+}, {
+"base": "PanelContainer",
+"class": "GameRoom",
+"language": "GDScript",
+"path": "res://rooms/GameRoom.gd"
+}, {
+"base": "PanelContainer",
+"class": "HistoryRow",
+"language": "GDScript",
+"path": "res://addons/dialogic/Example Assets/History/HistoryRow.gd"
+}, {
+"base": "Resource",
+"class": "Item",
+"language": "GDScript",
+"path": "res://items/Item.gd"
+}, {
+"base": "Resource",
+"class": "NPC",
+"language": "GDScript",
+"path": "res://npcs/NPC.gd"
+}, {
+"base": "GridContainer",
+"class": "SettingsGrid",
+"language": "GDScript",
+"path": "res://addons/resources_speadsheet_view/settings_grid.gd"
+}, {
+"base": "Control",
+"class": "SheetsDockEditor",
+"language": "GDScript",
+"path": "res://addons/resources_speadsheet_view/typed_editors/dock_base.gd"
+}, {
+"base": "Reference",
+"class": "SpreadsheetEditFormat",
+"language": "GDScript",
+"path": "res://addons/resources_speadsheet_view/import_export/formats_edit/edit_base.gd"
+}, {
+"base": "SpreadsheetEditFormatTres",
+"class": "SpreadsheetEditFormatCsv",
+"language": "GDScript",
+"path": "res://addons/resources_speadsheet_view/import_export/formats_edit/edit_csv.gd"
+}, {
+"base": "SpreadsheetEditFormat",
+"class": "SpreadsheetEditFormatTres",
+"language": "GDScript",
+"path": "res://addons/resources_speadsheet_view/import_export/formats_edit/edit_tres.gd"
+}, {
+"base": "Reference",
+"class": "SpreadsheetExportFormatCsv",
+"language": "GDScript",
+"path": "res://addons/resources_speadsheet_view/import_export/formats_export/export_csv.gd"
+}, {
+"base": "Resource",
+"class": "SpreadsheetImport",
+"language": "GDScript",
+"path": "res://addons/resources_speadsheet_view/import_export/spreadsheet_import.gd"
+}, {
+"base": "Reference",
+"class": "SpreadsheetImportFormatCsv",
+"language": "GDScript",
+"path": "res://addons/resources_speadsheet_view/import_export/formats_import/import_csv.gd"
+}, {
+"base": "Reference",
+"class": "TextEditingUtils",
+"language": "GDScript",
+"path": "res://addons/resources_speadsheet_view/text_editing_utils.gd"
+}, {
+"base": "Button",
+"class": "ThemeIconButton",
+"language": "GDScript",
+"path": "res://addons/resources_speadsheet_view/editor_icon_button.gd"
+}, {
+"base": "Control",
+"class": "ThemeStylebox",
+"language": "GDScript",
+"path": "res://addons/resources_speadsheet_view/editor_stylebox_overrider.gd"
+} ]
+_global_script_class_icons={
+"BeautifierAPI": "",
+"CellEditor": "",
+"CellEditorArray": "",
+"DTS": "",
+"Dialogic": "",
+"DialogicAnimaPropertiesHelper": "",
+"DialogicAnimaResources": "",
+"DialogicBackgroundMusic": "",
+"DialogicCustomEvents": "",
+"DialogicDefinitionsUtil": "",
+"DialogicParser": "",
+"DialogicResources": "",
+"DialogicUtil": "",
+"Exit": "",
+"GameRoom": "",
+"HistoryRow": "",
+"Item": "",
+"NPC": "",
+"SettingsGrid": "",
+"SheetsDockEditor": "",
+"SpreadsheetEditFormat": "",
+"SpreadsheetEditFormatCsv": "",
+"SpreadsheetEditFormatTres": "",
+"SpreadsheetExportFormatCsv": "",
+"SpreadsheetImport": "",
+"SpreadsheetImportFormatCsv": "",
+"TextEditingUtils": "",
+"ThemeIconButton": "",
+"ThemeStylebox": ""
+}
+
+[addons]
+
+resources_spreadsheet_view/color_rows=true
+resources_spreadsheet_view/color_arrays=true
+resources_spreadsheet_view/array_min_width=128.0
+resources_spreadsheet_view/clip_headers=false
+resources_spreadsheet_view/dupe_arrays=true
+resources_spreadsheet_view/context_menu_on_leftclick=false
+
+[application]
+
+config/name="LITMUS"
+config/description="This is not a game"
+run/main_scene="res://Intro.tscn"
+boot_splash/image="res://Splash.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 0 )
+config/icon="res://icon (2).png"
+config/windows_native_icon="res://Logo.ico"
+
+[autoload]
+
+Types="*res://globals/Types.gd"
+Global="*res://globals/Global.gd"
+
+[debug]
+
+settings/fps/force_fps=20
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/size/resizable=false
+window/size/borderless=true
+window/per_pixel_transparency/allowed=true
+window/per_pixel_transparency/enabled=true
+mouse_cursor/custom_image="res://mouse.png"
+window/stretch/mode="viewport"
+
+[editor]
+
+version_control_autoload_on_startup=true
+version_control_plugin_name="GitAPI"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/Todo_Manager/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/godot_beautifier/plugin.cfg", "res://addons/resources_speadsheet_view/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg" )
+
+[gdnative]
+
+singletons=[  ]
+
+[global]
+
+anti=false
+icoon=false
+icon=false
+
+[gui]
+
+theme/custom_font="res://fonts/plex_mono_16.tres"
+
+[input]
+
+dialogic_default_action={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777221,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":true,"doubleclick":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":88,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+
+[rendering]
+
+2d/snapping/use_gpu_pixel_snap=true
+2d/options/ninepatch_mode=0
+environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=false

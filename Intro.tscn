@@ -1,0 +1,531 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://worldcamera/Shakescript.gd" type="Script" id=1]
+[ext_resource path="res://shaders/ascii-shader/Template1/fineshader.tres" type="Material" id=2]
+[ext_resource path="res://ui/Logobanner.png" type="Texture" id=3]
+[ext_resource path="res://ui/Farbanner.png" type="Texture" id=4]
+[ext_resource path="res://ui/Headphonebanner.png" type="Texture" id=5]
+[ext_resource path="res://ui/Darkbanner.png" type="Texture" id=6]
+[ext_resource path="res://ui/Paradoxbanner.png" type="Texture" id=7]
+[ext_resource path="res://ui/Disclaimerbanner.png" type="Texture" id=8]
+[ext_resource path="res://Intro.gd" type="Script" id=9]
+[ext_resource path="res://sound/ominous.wav" type="AudioStream" id=10]
+[ext_resource path="res://sound/erie.wav" type="AudioStream" id=11]
+[ext_resource path="res://ui/mouse.png" type="Texture" id=12]
+[ext_resource path="res://sound/LITMUS.wav" type="AudioStream" id=13]
+[ext_resource path="res://shaders/Introshader.tres" type="Material" id=14]
+
+[sub_resource type="QuadMesh" id=5]
+
+[sub_resource type="Animation" id=6]
+resource_name = "IntroSequence"
+length = 35.0
+tracks/0/type = "audio"
+tracks/0/path = NodePath("Logo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("mains")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimationPlayer/Logo:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.4, 5.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Logo:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("AnimationPlayer/BLACK2:translation:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -18.9738, -0.25, 0, 0.25, 0, -18.9738, -0.25, 0, 0.25, 0, -18.9738, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4.9, 5.5 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("AnimationPlayer/BLACK2:translation:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1.87392, -0.25, 0, 0.25, 0, 1.87392, -0.25, 0, 0.25, 0, 1.87392, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4.9, 5.5 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("AnimationPlayer/BLACK2:translation:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( -0.439157, -0.25, 0, 0.25, 0, -0.439157, -0.25, 0, 0.25, 0, 0.539066, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4.9, 5.5 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Camera/Shader:material/0:shader_param/character_size:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 256, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 34.2, 34.3, 35 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Camera/Shader:material/0:shader_param/character_size:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 512, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 34.2, 34.3, 35 )
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("mains:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 7.9, 11.2, 14.3, 19.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, true, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("AnimationPlayer/BLACK2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 7.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("AnimationPlayer/DaRK:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 7.9, 18.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("AnimationPlayer/Headphones:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 11.2, 18.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("AnimationPlayer/Far:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 14.3, 18.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("AnimationPlayer/BLACK3:translation:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray( -18.9738, -0.25, 0, 0.25, 0, -18.9973, -0.25, 0, 0.25, 0, -18.7237, -0.25, 0, 0.25, 0, -18.7237, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 17.8, 18.3, 24.8, 25.3 )
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("AnimationPlayer/BLACK3:translation:y")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( -0.0580678, -0.25, 0, 0.25, 0, -0.210104, -0.25, 0, 0.25, 0, 0.930053, -0.25, 0, 0.25, 0, 0.930053, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 17.8, 18.3, 24.8, 25.3 )
+}
+tracks/16/type = "bezier"
+tracks/16/path = NodePath("AnimationPlayer/BLACK3:translation:z")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"points": PoolRealArray( -1.38598, -0.25, 0, 0.25, 0, 1.56078, -0.25, 0, 0.25, 0, -0.807218, -0.25, 0, 0.25, 0, 1.0365, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 17.8, 18.3, 24.8, 25.3 )
+}
+tracks/17/type = "bezier"
+tracks/17/path = NodePath("Logo:volume_db")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"points": PoolRealArray( -15, -0.25, 0, 0.25, 0, -15, -0.25, 0, 0.25, 0, -1000, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6.5, 7.2 )
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("AnimationPlayer/BLACK3:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 17.6, 18.4, 24.7, 25.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("AnimationPlayer/Disclaimer:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 19.9, 25.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("glitch:playing")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 26.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("AnimationPlayer/Paradox:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 26.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/22/type = "method"
+tracks/22/path = NodePath("Camera")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 26.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 50.0, 0.5, 100.0 ],
+"method": "shake"
+} ]
+}
+tracks/23/type = "method"
+tracks/23/path = NodePath(".")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 35 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "nextscene"
+} ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "New Anim"
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Logo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Logo:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("AnimationPlayer/BLACK2:translation:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -18.9738, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("AnimationPlayer/BLACK2:translation:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1.87392, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("AnimationPlayer/BLACK2:translation:z")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -0.439157, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("AnimationPlayer/BLACK3:translation:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( -18.9973, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("AnimationPlayer/BLACK3:translation:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( -0.210104, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("AnimationPlayer/BLACK3:translation:z")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 1.56078, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Camera/Shader:material/0:shader_param/character_size:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("Camera/Shader:material/0:shader_param/character_size:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 2, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 9 )
+
+[node name="BLACK" type="Sprite3D" parent="."]
+transform = Transform( 541.995, 0, 0, 0, -4.37114e-08, 1.43361, 0, -541.995, -3.39642e-05, -18.9738, -10.4912, 18.0132 )
+centered = false
+pixel_size = 0.0045
+transparent = false
+double_sided = false
+texture = ExtResource( 12 )
+
+[node name="Logo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -15.0
+
+[node name="mains" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -13.753
+
+[node name="glitch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -17.616
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.95467, 0 )
+size = 0.1
+near = 0.07
+script = ExtResource( 1 )
+shaking = false
+
+[node name="Timer" type="Timer" parent="Camera"]
+autostart = true
+
+[node name="Tween" type="Tween" parent="Camera"]
+
+[node name="Shader" type="MeshInstance" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28143, -2.43994 )
+mesh = SubResource( 5 )
+material/0 = ExtResource( 2 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000117779, -0.00792339, 0.680459 )
+light_color = Color( 0.384314, 0.384314, 0.384314, 1 )
+light_energy = 6.494
+light_indirect_energy = 16.0
+light_specular = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/IntroSequence = SubResource( 6 )
+"anims/New Anim" = SubResource( 7 )
+anims/RESET = SubResource( 8 )
+
+[node name="Logo" type="Sprite3D" parent="AnimationPlayer"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1.43361, 0, -1, -6.26651e-08, -2.90358, 0.740799, 0.975396 )
+centered = false
+pixel_size = 0.0045
+transparent = false
+double_sided = false
+texture = ExtResource( 3 )
+
+[node name="BLACK2" type="Sprite3D" parent="AnimationPlayer"]
+transform = Transform( 481.067, 0, 0, 0, -4.37114e-08, 1.43361, 0, -259.439, -1.62578e-05, -18.9738, 1.87392, -0.439157 )
+centered = false
+pixel_size = 0.0045
+transparent = false
+double_sided = false
+texture = ExtResource( 12 )
+
+[node name="DaRK" type="Sprite3D" parent="AnimationPlayer"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1.43361, 0, -1, -6.26651e-08, -1.79783, -1.14228, -0.893675 )
+visible = false
+centered = false
+pixel_size = 0.0045
+transparent = false
+double_sided = false
+texture = ExtResource( 6 )
+
+[node name="Headphones" type="Sprite3D" parent="AnimationPlayer"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1.43361, 0, -1, -6.26651e-08, -1.79367, -1.14228, 0.569656 )
+visible = false
+centered = false
+pixel_size = 0.0045
+transparent = false
+double_sided = false
+texture = ExtResource( 5 )
+
+[node name="Far" type="Sprite3D" parent="AnimationPlayer"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1.43361, 0, -1, -6.26651e-08, -1.73769, -1.14228, 1.9467 )
+visible = false
+centered = false
+pixel_size = 0.0045
+transparent = false
+double_sided = false
+texture = ExtResource( 4 )
+
+[node name="BLACK3" type="Sprite3D" parent="AnimationPlayer"]
+transform = Transform( 481.067, 0, 0, 0, -4.37114e-08, 1.43361, 0, -259.439, -1.62578e-05, -18.9973, -0.210104, 1.56078 )
+visible = false
+centered = false
+pixel_size = 0.0045
+transparent = false
+double_sided = false
+texture = ExtResource( 12 )
+
+[node name="Disclaimer" type="Sprite3D" parent="AnimationPlayer"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1.43361, 0, -1, -6.26651e-08, -1.95336, 0.740799, 0.591287 )
+visible = false
+centered = false
+pixel_size = 0.0045
+transparent = false
+double_sided = false
+texture = ExtResource( 8 )
+
+[node name="Paradox" type="Sprite3D" parent="AnimationPlayer"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1.43361, 0, -1, -6.26651e-08, -1.95336, 0.740799, 0.591287 )
+visible = false
+centered = false
+pixel_size = 0.0045
+transparent = false
+double_sided = false
+texture = ExtResource( 7 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 14 )
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[connection signal="timeout" from="Camera/Timer" to="Camera" method="_on_Timer_timeout"]

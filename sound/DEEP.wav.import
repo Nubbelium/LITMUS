@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DEEP.wav-d9e7a5a2ea159d544d487c14b3aa7342.sample"
+
+[deps]
+
+source_file="res://sound/DEEP.wav"
+dest_files=[ "res://.import/DEEP.wav-d9e7a5a2ea159d544d487c14b3aa7342.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
