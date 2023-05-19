@@ -1,30 +1,37 @@
-# Godot Text Adventure Tutorial
-This repository contains the source code for the Godot Text Adventure Tutorial series.
 
-In this series, you'll create a text adventure game in the same style as Zork and other old-school text-based games.
+![Logo](https://media.discordapp.net/attachments/950628686393139220/1108966531053920336/banner.png?width=1419&height=474)
 
-[You can follow along with the series on YouTube.](https://www.youtube.com/watch?v=wCI650TDhHA&list=PLpwc3ughKbZfkSPko3azFD4dd4IHSiQeE)
 
-## How to Use This Repository
+# LITMUS 
 
-I make a separate commit at the end of each video in the series, so if you want to pull down the code at a specific point in the series you can find the specific commit for the video you want (I label each commit message with the video part) in the commits tab.
+The repository is for the development/ production of the WIP game LITMUS. LITMUS is a complex text adventure game that doubles as a gameplayer personality test for all players involved. 
 
-If there is a bug or issue with the code, feel free to open an issue here or reach out on the Discord server (Discord is preferable since I check it more, but I'll eventually see it here).
 
-## Join our Community Discord
+## Roadmap
 
-If you have questions about the tutorial or the code, or just want to connect with other developers, join our community Discord by following the link below.
-I or another member will be happy to help and we have an active community of developers there. We'd love to have you!
+- Currently working on Full LITMUS Demo
 
-[Click here to join our Discord.](https://discord.gg/e4BxZbe)
+- Reworking Background Images
 
-## Support my Work
+- Finalizing Ascii ilter
 
-If you've found this tutorial series helpful, please consider supporting my work by [buying me a coffee.](https://www.buymeacoffee.com/jmbiv)
+- Editing CRT TV Screen Effect
 
-Thanks so much for watching, and I hope you find these tutorials helpful! If you use them to make your own game, or just find some of the concepts I talk about helpful, I'd love to see updates on the projects you make - feel free to drop those in the Discord server.
+- Adding more Settings and accessability features
 
-<hr>
+- Adding multifaceted choice system wit complex character dialouge and scripting (Lmao)
 
-![Gameplayer teaser image of the final product](marketing/marketing-cover.png)
+
+## Demo
+
+Link: [LITMUS (Alpha Demo)](https://drive.google.com/file/d/11JNhT6ItPd9ifu4N_Trw9zdwnP8bVcCY/view?usp=sharing)
+
+![Forest Path](https://media.discordapp.net/attachments/950628686393139220/1108970561478070362/forestimage.png?width=1174&height=661)
+
+
+## Acknowledgements
+
+ - [Base Template For Text Adventure Game](https://www.buymeacoffee.com/jmbiv)
+ - [Character Dialoug Framework](https://github.com/coppolaemilio/dialogic)
+ - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 
