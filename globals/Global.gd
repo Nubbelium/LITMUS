@@ -2,15 +2,16 @@ extends Node
 
 onready var shader = "res://shaders/ascii-shader/Template1/fineshader.tres"
 
-
+# Settings
 var setfullscreen = true
 var typespeed = 0.01
+var charsetspeed = 4
+var volume = 50
+var retromode = true
+# Game state
 var starter = true
 var typing = false
-var volume = 50
 var camera = null
-var charsetspeed = 4
-var retromode = true
 var currentRoom = "Unknown"
 
 #	pass

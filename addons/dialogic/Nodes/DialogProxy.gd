@@ -13,6 +13,7 @@ func _ready():
 	get_parent().call_deferred('add_child', d)
 	_copy_signals(d if not add_canvas else d.dialog_node)	
 	queue_free()
+	
 
 func _copy_signals(dialogic:Node):
 	var sigs = self.get_signal_list()

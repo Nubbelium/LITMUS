@@ -190,6 +190,8 @@ margin_right = 1260.0
 margin_bottom = 248.0
 rect_min_size = Vector2( 400, 0 )
 
+[connection signal="event_end" from="CommandProcessor" to="." method="_on_CommandProcessor_event_end"]
 [connection signal="room_changed" from="CommandProcessor" to="." method="_on_CommandProcessor_room_changed"]
+[connection signal="set_visibility" from="CommandProcessor" to="." method="_on_CommandProcessor_set_visibility"]
 [connection signal="text_entered" from="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer/Input" to="." method="_on_Input_text_entered"]
 [connection signal="text_entered" from="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer/Input" to="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer/Input" method="_on_Input_text_entered"]

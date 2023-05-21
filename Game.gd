@@ -6,6 +6,8 @@ onready var game_info = $Background/MarginContainer/Columns/Rows/GameInfo
 onready var command_processor = $CommandProcessor
 onready var room_manager = $RoomManager
 onready var player = $Player
+signal start_dialog()
+signal end_dialog()
 
 
 func _ready() -> void:
@@ -29,4 +31,14 @@ func _on_Input_text_entered(new_text: String) -> void:
 
 func _on_CommandProcessor_room_changed(new_room):
 	emit_signal("room_changed2", new_room)
+	pass # Replace with function body.
+
+
+func _on_CommandProcessor_set_visibility(x):
+	emit_signal("start_dialog")
+	
+	pass # Replace with function body.
+
+func _on_CommandProcessor_event_end(type):
+	emit_signal("end_dialog")
 	pass # Replace with function body.

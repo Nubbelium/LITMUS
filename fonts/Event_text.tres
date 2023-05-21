@@ -3,7 +3,6 @@
 [ext_resource path="res://fonts/IBMPlexMono-Regular.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 24
 outline_size = 1
 outline_color = Color( 0.490196, 0.466667, 0.227451, 1 )
 extra_spacing_bottom = 11

@@ -91,7 +91,7 @@
 		},
 		{
 			"event_id": "dialogic_022",
-			"transition_duration": 0.1
+			"transition_duration": 0
 		},
 		{
 			"call_node": {
@@ -107,6 +107,6 @@
 	"metadata": {
 		"dialogic-version": "1.4.5",
 		"file": "timeline-1684368458.json",
-		"name": "Litmu-Unknown"
+		"name": "figure"
 	}
 }

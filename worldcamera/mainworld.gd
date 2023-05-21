@@ -21,3 +21,15 @@ func _on_Game_room_changed2(new_room):
 			return
 	#animator.play("Transition")
 	pass # Replace with function body
+	
+
+
+func _on_Game_end_dialog():
+	animator.play("endtalk_Transition")
+	pass # Replace with function body.
+
+
+func _on_Game_start_dialog():
+	animator.play("Talk_Transition")
+	pass # Replace with function body.
+

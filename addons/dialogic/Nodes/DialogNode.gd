@@ -1416,7 +1416,7 @@ func _hide_dialog():
 	$TextBubble.clear() # Clearing the text
 	$TextBubble.modulate = Color(1,1,1,0)
 	dialog_faded_in_already = false
-	visible = false 
+	Global.emit_signal("set_visibility", true)
 	
 
 # start a fade in animation

@@ -9,13 +9,13 @@
 	"nickname": "",
 	"nickname_bool": false,
 	"offset_x": 0,
-	"offset_y": -350,
+	"offset_y": -400,
 	"portraits": [
 		{
 			"name": "Default",
 			"path": "res://npcs/Litmu.png"
 		}
 	],
-	"scale": 800,
+	"scale": 500,
 	"theme": "theme-1684368506.cfg"
 }

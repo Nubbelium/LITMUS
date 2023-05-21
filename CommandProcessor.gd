@@ -2,6 +2,7 @@ extends Node
 
 signal room_changed(new_room)
 signal room_updated(current_room)
+signal set_visibility(x)
 
 
 var current_room = null
@@ -167,15 +168,29 @@ func use(second_word: String) -> String:
 
 
 func talk(second_word: String) -> String:
+	
 	if second_word == "":
 		return Types.wrap_system_text("Talk to who?")
-
+		
 	for npc in current_room.npcs:
 		if npc.npc_name.to_lower() == second_word:
-			var dialog = npc.post_quest_dialog if npc.has_received_quest_item else npc.initial_dialog
-			return Types.wrap_npc_text(npc.npc_name + ": ") + Types.wrap_speech_text("\"" + dialog + "\"")
-
+			# Code copied from Dialog.tscn
+			var d = Dialogic.start(second_word, '', "res://addons/dialogic/Nodes/DialogNode.tscn", true)
+			get_parent().call_deferred('add_child', d)
+			_copy_signals(d if not true else d.dialog_node)	
+			
+			emit_signal("set_visibility", false)
+			return Types.wrap_system_text("Talking to: " + second_word)
+			
 	return "There is no " + Types.wrap_npc_text(second_word) + " here."
+#
+#	Old code, replace for tradtional text quotes...
+#	for npc in current_room.npcs:
+#		if npc.npc_name.to_lower() == second_word:
+#			var dialog = npc.post_quest_dialog if npc.has_received_quest_item else npc.initial_dialog
+#			return Types.wrap_npc_text(npc.npc_name + ": ") + Types.wrap_speech_text("\"" + dialog + "\"")
+#
+#	return "There is no " + Types.wrap_npc_text(second_word) + " here."
 
 
 func give(second_word: String) -> String:
@@ -226,3 +241,41 @@ func change_room(new_room: GameRoom) -> String:
 	current_room = new_room
 	emit_signal("room_changed", new_room)
 	return new_room.get_full_description()
+	
+
+func _copy_signals(dialogic:Node):
+	var sigs = self.get_signal_list()
+	for s in sigs:
+		if not s['name'] in _signals_to_copy:
+			continue
+		if not dialogic.has_signal(s['name']):
+			print("Cannot copy connections of signal " + s['name'] + " from " + self.to_string() + " to " + dialogic.to_string())
+			continue
+		var conns = self.get_signal_connection_list(s['name'])
+		for c in conns:
+			dialogic.connect(c['signal'], c['target'], c['method'], c['binds'], c['flags'])
+
+
+var _signals_to_copy = [
+	'event_start',
+	'event_end',
+	'text_complete',
+	'timeline_start',
+	'timeline_end',
+	'dialogic_signal',
+	'letter_displayed',
+]
+## -----------------------------------------------------------------------------
+## 						SIGNALS (proxy copy of DialogNode signals)
+## -----------------------------------------------------------------------------
+# Event end/start
+signal event_start(type, event)
+signal event_end(type)
+# Text Signals
+signal text_complete(text_data)
+# Timeline end/start
+signal timeline_start(timeline_name)
+signal timeline_end(timeline_name)
+# Custom user signal
+signal dialogic_signal(value)
+signal letter_displayed(lastLetter)
